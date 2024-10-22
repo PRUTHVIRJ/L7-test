@@ -1,6 +1,9 @@
-# Chocolate House Management System
-
-This is a simple command-line application for managing a chocolate house business. It allows you to manage seasonal flavors, ingredient inventory, and customer suggestions.
+## Problem statement
+Create a Simple Python Application for a fictional chocolate house that uses
+SQLite to manage,
+- Seasonal flavor offerings
+- Ingredient inventory
+- Customer flavor suggestions and allergy concerns
 
 ## Features
 
