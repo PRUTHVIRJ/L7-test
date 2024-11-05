@@ -8,7 +8,7 @@ from seasonal_flavors import manage_seasonal_flavors
 from ingredient_base import manage_ingredient_inventory
 from suggestions import manage_customer_suggestions
 
-DB_NAME = 'chocolate_house.db'
+DB_NAME = 'inventory.db'
 
 def establish_db_connection():
 
