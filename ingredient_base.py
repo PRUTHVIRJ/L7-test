@@ -1,19 +1,8 @@
-"""
-Ingredient Inventory Management Module
-
-This module provides functionality to manage the ingredient inventory
-in the Chocolate House Management System.
-"""
 
 import sqlite3
 
 def manage_ingredient_inventory(conn):
-    """
-    Main function to manage ingredient inventory.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     while True:
         print("\nManage Ingredient Inventory")
         print("1. Add new ingredient")
@@ -38,12 +27,7 @@ def manage_ingredient_inventory(conn):
             print("Invalid choice. Please try again.")
 
 def add_ingredient(conn):
-    """
-    Add a new ingredient to the inventory.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     name = input("Enter ingredient name: ")
     quantity = float(input("Enter quantity: "))
     unit = input("Enter unit of measurement: ")
@@ -55,12 +39,7 @@ def add_ingredient(conn):
     print("Ingredient added successfully!")
 
 def view_ingredients(conn):
-    """
-    View all ingredients in the inventory.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM ingredient_inventory")
     ingredients = cursor.fetchall()
@@ -72,12 +51,7 @@ def view_ingredients(conn):
             print(f"ID: {ingredient[0]}, Name: {ingredient[1]}, Quantity: {ingredient[2]} {ingredient[3]}")
 
 def update_ingredient_quantity(conn):
-    """
-    Update the quantity of an existing ingredient.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     ingredient_id = input("Enter the ID of the ingredient to update: ")
     new_quantity = float(input("Enter new quantity: "))
     
@@ -87,12 +61,7 @@ def update_ingredient_quantity(conn):
     print("Ingredient quantity updated successfully!")
 
 def delete_ingredient(conn):
-    """
-    Delete an ingredient from the inventory.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     ingredient_id = input("Enter the ID of the ingredient to delete: ")
     
     cursor = conn.cursor()

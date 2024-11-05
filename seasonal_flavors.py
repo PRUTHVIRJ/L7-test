@@ -1,17 +1,6 @@
-"""
-Seasonal Flavors Management Module
-
-This module provides functionality to manage seasonal chocolate flavors
-in the Chocolate House Management System.
-"""
 
 def manage_seasonal_flavors(conn):
-    """
-    Main function to manage seasonal flavors.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     while True:
         print("\nManage Seasonal Flavors")
         print("1. Add new flavor")
@@ -36,12 +25,7 @@ def manage_seasonal_flavors(conn):
             print("Invalid choice. Please try again.")
 
 def add_flavor(conn):
-    """
-    Add a new seasonal flavor to the database.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     name = input("Enter flavor name: ")
     season = input("Enter season (Spring/Summer/Fall/Winter): ")
     description = input("Enter flavor description: ")
@@ -53,12 +37,7 @@ def add_flavor(conn):
     print("Flavor added successfully!")
 
 def view_flavors(conn):
-    """
-    View all seasonal flavors in the database.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM seasonal_flavors")
     flavors = cursor.fetchall()
@@ -70,12 +49,7 @@ def view_flavors(conn):
             print(f"ID: {flavor[0]}, Name: {flavor[1]}, Season: {flavor[2]}, Description: {flavor[3]}")
 
 def update_flavor(conn):
-    """
-    Update an existing seasonal flavor in the database.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     flavor_id = input("Enter the ID of the flavor to update: ")
     name = input("Enter new name (press enter to skip): ")
     season = input("Enter new season (press enter to skip): ")
@@ -103,12 +77,7 @@ def update_flavor(conn):
     print("Flavor updated successfully!")
 
 def delete_flavor(conn):
-    """
-    Delete a seasonal flavor from the database.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     flavor_id = input("Enter the ID of the flavor to delete: ")
     
     cursor = conn.cursor()

@@ -1,19 +1,8 @@
-"""
-Customer Suggestions Management Module
-
-This module provides functionality to manage customer suggestions
-in the Chocolate House Management System.
-"""
 
 from datetime import datetime
 
 def manage_customer_suggestions(conn):
-    """
-    Main function to manage customer suggestions.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     while True:
         print("\nManage Customer Suggestions")
         print("1. Add new suggestion")
@@ -35,12 +24,7 @@ def manage_customer_suggestions(conn):
             print("Invalid choice. Please try again.")
 
 def add_suggestion(conn):
-    """
-    Add a new customer suggestion to the database.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     flavor_name = input("Enter suggested flavor name: ")
     description = input("Enter flavor description: ")
     allergy_concerns = input("Enter any allergy concerns (comma-separated): ")
@@ -53,12 +37,7 @@ def add_suggestion(conn):
     print("Suggestion added successfully!")
 
 def view_suggestions(conn):
-    """
-    View all customer suggestions in the database.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM customer_suggestions")
     suggestions = cursor.fetchall()
@@ -72,12 +51,7 @@ def view_suggestions(conn):
             print("-" * 50)
 
 def delete_suggestion(conn):
-    """
-    Delete a customer suggestion from the database.
 
-    Args:
-        conn (sqlite3.Connection): The database connection object.
-    """
     suggestion_id = input("Enter the ID of the suggestion to delete: ")
     
     cursor = conn.cursor()
